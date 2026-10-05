@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --breakpoint-lg : 90rem;
+  --font-reddit: "Reddit Sans", sans-serif;
+
+  --color-neutral900 : #21214D;
+  --color-neutral600 : #57577B;
+  --color-neutral300 : #9393B7;
+  --color-neutral200 : #CBCDD0;
+
+  --color-blue700 : #2A4CD5;
+  --color-blue600 : #4865DB;
+  --color-blue200 : #C7D3F7;
+  --color-blue100 : #E0E6FA;
+
+  --color-red700 : #E60013;
+  --color-red300 : #FF9B99;
+  --color-indigo200 : #B8B1FF;
+  --color-blue300 : #89CAFF;
+  --color-green300 : #89E780;
+  --color-amber300 : #FFC97C;
+
+  --background-image-custom-gradient: linear-gradient(
+    180deg,
+    #F5F5FF 72.99%,
+    #E0E0FF 100%
+  );
+
+  --text-preset1: 52px;
+  --text-preset1--line-height: 140%; 
+  --text-preset1--letter-spacing: -2px; 
+  --text-preset1--font-weight: 700; 
+
+  --text-preset1M: 46px;
+  --text-preset1M--line-height: 120%; 
+  --text-preset1M--letter-spacing: -2px; 
+  --text-preset1M--font-weight: 700; 
+
+  --text-preset2: 40px;
+  --text-preset2--line-height: 120%; 
+  --text-preset2--letter-spacing: -0.3px; 
+  --text-preset2--font-weight: 700; 
+
+  --text-preset2M: 32px;
+  --text-preset2M--line-height: 120%; 
+  --text-preset2M--letter-spacing: -0.3px; 
+  --text-preset2M--font-weight: 700;
+
+  --text-preset3: 32px;
+  --text-preset3--line-height: 140%; 
+  --text-preset3--letter-spacing: -0.3px; 
+  --text-preset3--font-weight: 700;
+  
+  --text-preset3M: 28px;
+  --text-preset3M--line-height: 130%; 
+  --text-preset3M--letter-spacing: -0.3px; 
+  --text-preset3M--font-weight: 700;
+
+  --text-preset4: 24px;
+  --text-preset4--line-height: 140%; 
+
+  --text-preset5: 20px;
+  --text-preset5--line-height: 140%; 
+
+  --text-preset6: 18px;
+  --text-preset6--line-height: 120%; 
+
+  --text-preset7: 15px;
+  --text-preset7--line-height: 120%; 
+
+  --text-preset8: 13px;
+  --text-preset8--line-height: 100%; 
+
+  --text-preset9: 12px;
+  --text-preset9--line-height: 110%; 
+}
