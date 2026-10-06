@@ -28,6 +28,8 @@
     #E0E0FF 100%
   );
 
+  --shadow-form: 0 8px 16px 0 rgba(32, 37, 41, 0.08);
+
   --text-preset1: 52px;
   --text-preset1--line-height: 140%; 
   --text-preset1--letter-spacing: -2px; 
