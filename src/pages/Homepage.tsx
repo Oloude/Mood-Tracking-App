@@ -1,6 +1,7 @@
 import AverageContainer from "../components/AverageContainer";
 import Greeting from "../components/Greeting";
 import Header from "../components/Header";
+import MoodSleepTrend from "../components/MoodSleepTrend";
 
 function Homepage() {
   return (
@@ -11,6 +12,7 @@ function Homepage() {
       </div>
       <div className="flex flex-col gap-8 px-4 md:px-8">
         <AverageContainer />
+        <MoodSleepTrend/>
       </div>
     </main>
   );
