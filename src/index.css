@@ -29,6 +29,7 @@
   );
 
   --shadow-form: 0 8px 16px 0 rgba(32, 37, 41, 0.08);
+  --sadow-dropdown : 0 5px 8px 0 rgba(33, 33, 77, 0.16);
 
   --text-preset1: 52px;
   --text-preset1--line-height: 140%; 
@@ -77,4 +78,8 @@
 
   --text-preset9: 12px;
   --text-preset9--line-height: 110%; 
+}
+
+button{
+  cursor: pointer;
 }
