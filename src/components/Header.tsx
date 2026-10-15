@@ -3,14 +3,19 @@ import { IoIosArrowDown } from "react-icons/io"
 import ProfileDropdown from "./ProfileDropdown"
 import SettingModal from "./SettingModal"
 
+type HeaderProps = {
+    avatarDetails: {
+    name: string;
+    avatar: string;
+},
+setAvatarDetails: React.Dispatch<React.SetStateAction<{
+ name: string;
+ avatar: string;
+}>>
+}
 
-function Header() {
-    const storedDetails = localStorage.getItem('onboarding')
-    let onboardingDetails = storedDetails ? JSON.parse(storedDetails) : {
-        name : '',
-        avatar : File,
-    }
-    const [avatarDetails, setAvatarDetails] = useState(onboardingDetails)
+function Header({avatarDetails, setAvatarDetails} : HeaderProps) {
+    
 
     const [showDropdown, setShowDropdown] = useState(false)
     const [openSettingModal, setOpenSettingModal] = useState(false)
@@ -32,7 +37,7 @@ function Header() {
             <button onClick={()=> setShowDropdown(prev => !prev)} className="text-neutral900"><IoIosArrowDown className="w-4 h-4" /></button>
         </div>
        {showDropdown && <ProfileDropdown handleSetting={handleOpenSettingModal}/>}
-       {openSettingModal && <SettingModal closeModal={handleCloseSettingModal}/>}
+       {openSettingModal && <SettingModal closeModal={handleCloseSettingModal} setAvatarDetails={setAvatarDetails}/>}
     </header>
   )
 }
