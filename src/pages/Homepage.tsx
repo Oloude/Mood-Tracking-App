@@ -6,6 +6,12 @@ import MoodSleepTrend from "../components/MoodSleepTrend";
 import NoTodayMood from "../components/NoTodayMood";
 import MoodLog from "../components/MoodLog";
 
+type Mood = {
+  mood : string;
+  tags : string[];
+  feels : string;
+  sleepHours : string;
+}
 function Homepage() {
   const storedDetails = localStorage.getItem('onboarding')
       let onboardingDetails = storedDetails ? JSON.parse(storedDetails) : {
@@ -20,13 +26,21 @@ function Homepage() {
       >(onboardingDetails)
 
   const [openMoodLog, setOpenMoodLog]     = useState(false)
+  const [moodLog, setMoodLog] = useState<Mood>({
+    mood : '',
+    tags : [],
+    feels : '',
+    sleepHours : ''
+  })
+
+
   
 
 
 
   return (
     <main className="flex flex-col gap-16 pb-20 bg-custom-gradient min-h-screen font-reddit">
-     {openMoodLog && <MoodLog closeModal={setOpenMoodLog}/>}
+     {openMoodLog && <MoodLog closeModal={setOpenMoodLog} moodLog={moodLog} setMoodLog={setMoodLog}/>}
       <div className="flex flex-col gap-12 px-4 pt-8">
         <Header avatarDetails={avatarDetails} setAvatarDetails={setAvatarDetails}/>
         <Greeting name={avatarDetails.name}/>
