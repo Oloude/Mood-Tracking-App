@@ -37,7 +37,7 @@ function Signup() {
         return false
      }
 
-     localStorage.setItem('login-details', JSON.stringify(formData))
+     localStorage.setItem('login-details', JSON.stringify({...formData, isActive: true}))
      navigate('/onboarding')
 
     }

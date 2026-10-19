@@ -32,7 +32,7 @@ function Login() {
           password: "",
         };
 
-    console.log(loginDetails);
+   
     if (
       loginDetails.email.toLowerCase() !== formData.email.trim().toLowerCase()
     ) {
@@ -42,13 +42,16 @@ function Login() {
       loginDetails.password.toLowerCase() !==
       formData.password.trim().toLowerCase()
     ) {
-      error = "One of the crediential is wrong";
+      
+    error = "One of the crediential is wrong";
     }
 
     setFormError(error);
     if (error) {
       return;
     }
+    localStorage.setItem('login-details', JSON.stringify({...formData, isActive: true}))
+
 
     navigate("/");
   }

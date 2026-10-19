@@ -2,7 +2,7 @@
 
 function MoodSleepTrend() {
   return (
-    <section className="flex flex-col gap-5 px-4 py-5 bg-white border border-blue100 rounded-2xl">
+    <section className="flex flex-col gap-5 px-4 py-5 bg-white border border-blue100 rounded-2xl lg:col-span-2">
         <h3 className="text-preset3M text-neutral900">Mood and sleep trends</h3>
        
 
