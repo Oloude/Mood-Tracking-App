@@ -1,6 +1,8 @@
+type ReflectionProps = {
+  quote : string; feelings : string[];
+}
 
-
-function LoggedReflection() {
+function LoggedReflection({quote, feelings} : ReflectionProps) {
   return (
     <section className="p-5 rounded-2xl bg-white border border-blue100 flex flex-col gap-4">
          <div className="flex items-center gap-3 text-preset6 text-neutral600 font-medium">
@@ -8,11 +10,13 @@ function LoggedReflection() {
             Reflection of the day
         </div>
         <div className="min-h-20 text-preset6 text-neutral900">
-            Woke up early and finally tackled a big project!
+            {quote}
         </div>
         <div className="flex items-center gap-3">
-            <span className="text-preset6 text-neutral600 italics">#Grateful</span>
-            <span className="text-preset6 text-neutral600 italics">#Optimistic</span>
+            
+            {
+              feelings.map(feel => <span key={feel} className="text-preset6 text-neutral600 italics">#{feel}</span>)
+            }
         </div>
     </section>
   )

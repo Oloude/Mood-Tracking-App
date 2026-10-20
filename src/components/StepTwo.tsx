@@ -19,7 +19,7 @@ function StepTwo({selectedTags, handleTagChange} : StepTwoProps) {
                 tags.map(tag => <button key={tag} onClick={()=> handleTagChange(tag)} className={`px-4 py-3 rounded-[10px] border-2  flex items-center gap-2 text-preset6 text-neutral900 ${
                     selectedTags.includes(tag) ? 'border-blue600' : 'border-blue200'
                 }`}>
-                    <input type="checkbox" name="" id="" className="w-4 h-4 accent-blue600" checked={selectedTags.includes(tag)} />
+                    <input type="checkbox" name="" id="" readOnly className="w-4 h-4 accent-blue600" checked={selectedTags.includes(tag)} />
                     {tag}</button>)
             }
         </div>

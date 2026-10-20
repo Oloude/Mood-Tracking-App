@@ -7,6 +7,25 @@ import StepFour from "./StepFour"
 import { useState } from "react"
 import { MdError } from "react-icons/md"
 
+let moods = {
+    "Very Happy" : 2,
+    "Happy" : 1,
+    "Neutral" : 0,
+    "Sad" : -1,
+    "Very Sad" : -2
+}
+
+let sleeps = {
+    '0-2 hours' : 1,
+    '3-4 hours' : 3.5,
+    '5-6 hours' : 5.5,
+    "7-8 hours" : 7.5,
+    "9+ hours" : 9,
+}
+
+type Mood = keyof typeof moods;
+type Sleep = keyof typeof sleeps;
+
 type LogProps = {
     closeModal : React.Dispatch<React.SetStateAction<boolean>>;
    moodLog: {
@@ -21,9 +40,25 @@ setMoodLog: React.Dispatch<React.SetStateAction<{
  feels: string;
  sleepHours: string;
 }>>;
+setMoods :  React.Dispatch<React.SetStateAction<{
+ moodEntries: {
+ createdAt: string;
+ mood: number;
+ feelings: string[];
+ journalEntry: string;
+ sleepHours: number;
+ }[];
+ moodQuotes: {
+ "-2": string[];
+ "-1": string[];
+ "0": string[];
+ "1": string[];
+ "2": string[];
+ };
+}>>
 }
 
-function MoodLog({closeModal, moodLog, setMoodLog}: LogProps) {
+function MoodLog({closeModal, moodLog, setMoodLog, setMoods}: LogProps) {
     const [step, setStep] = useState(1)
     const [errorMessage, setErrorMessage] = useState('')
 
@@ -49,7 +84,18 @@ function MoodLog({closeModal, moodLog, setMoodLog}: LogProps) {
         }
         setStep(prev => prev < 4 ? prev + 1 : prev)
         if(step === 4 && moodLog.sleepHours){
+            let newMood = {
+                createdAt : new Date().toISOString(),
+                mood : moods[moodLog.mood as Mood],
+                feelings : moodLog.tags,
+                journalEntry : moodLog.feels,
+                sleepHours : sleeps[moodLog.sleepHours as Sleep],
+            }
+            console.log(moodLog.sleepHours)
+            console.log(newMood)
+            setMoods(prev => ({...prev, moodEntries: [...prev.moodEntries, newMood]}))
             closeModal(false)
+
         }
     }
    
