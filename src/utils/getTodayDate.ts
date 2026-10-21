@@ -37,7 +37,8 @@ function getTodayDate(){
  let month = today.getMonth()
  let year = today.getFullYear()
 
- return `${daysOfWeek[day]}, ${months[month]} ${todayDate}${suffixes[todayDate]}, ${year}`
+
+ return `${daysOfWeek[day]}, ${months[month]} ${todayDate}${suffixes[todayDate -1]}, ${year}`
 
 }
 

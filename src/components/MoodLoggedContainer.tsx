@@ -20,7 +20,7 @@ mood :  {
 }
 function MoodLoggedContainer({mood, quotes} : ContainerProps) {
   let quote = quotes[mood.mood.toString() as keyof typeof quotes][getRandom(quotes[mood.mood.toString() as keyof typeof quotes].length)]
-  console.log(mood)
+ 
   return (
     <div className="grid grid-cols-1 gap-5 lg:gap-8 lg:grid-cols-5">
       <LoggedFeeling journalEntry={mood.journalEntry} moodNumber={mood.mood} />
