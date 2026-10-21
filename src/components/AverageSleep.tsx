@@ -2,13 +2,7 @@ import { RiZzzLine } from "react-icons/ri";
 import getAverageMood from "../utils/getAverageMood";
 import { GoArrowDownRight, GoArrowRight, GoArrowUpRight } from "react-icons/go";
 
-let hours = {
-  '1' : '0–2 hours',
-  '3.5' : '3–4 hours',
-  '5.5' : '5–6 hours',
-  '7.5' : '7–8 hours',
-  '9' : '9+ hours',
-}
+
 
 type AverageSleepProps = {
   moodIconColors: {
@@ -40,7 +34,7 @@ icon : GoArrowDownRight,
 title : 'Decrease from the previous 5 check-ins'
 }, ]
 
-function AverageSleep({moodIconColors, moods} : AverageSleepProps) {
+function AverageSleep({ moods} : AverageSleepProps) {
   let averages = getAverageMood(moods)
 
   let lastAverageSleep = averages && averages.lastSleepAverage

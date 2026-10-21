@@ -7,7 +7,6 @@ import NoTodayMood from "../components/NoTodayMood";
 import MoodLog from "../components/MoodLog";
 import MoodLoggedContainer from "../components/MoodLoggedContainer";
 import isTodayLogged from "../utils/isTodayLogged";
-import areConsecutive from "../utils/getAverageMood";
 import getAverageMood from "../utils/getAverageMood";
 
 type Mood = {
