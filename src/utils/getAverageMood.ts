@@ -36,7 +36,7 @@ type Moods = {
 export default function getAverageMood(mood: Moods[]) {
 let result = areConsecutive(mood)
 
-if(result === false){
+if(result === false || mood.length < 10){
     return false
 }
 let lastFiveCheckin = mood.slice(5)

@@ -84,3 +84,6 @@ if (averages && typeof lastAverageSleep === "number") {
 }
 
 export default AverageSleep
+
+
+

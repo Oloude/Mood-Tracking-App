@@ -40,7 +40,8 @@ function AverageMood({moodIconColors, moods} : AverageMoodProps) {
   let moodDetails = moodIconColors.find(m => m.value === lastAverageMood)
   let arrowNumber = lastAverageMood === previousAverageMood ? 0 : lastAverageMood > previousAverageMood ? 1 : 2
   const ArrowIcon = arrows[arrowNumber].icon;
-
+console.log(moods)
+console.log(lastAverageMood, previousAverageMood, averages)
   return (
     <div className="flex flex-col gap-3">
         <h4 className="text-neutral900 text-preset5 font-semibold">Average Mood <span className="text-neutral600 text-preset7 font-normal">(Last 5 Check-ins)</span></h4>

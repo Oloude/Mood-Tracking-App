@@ -157,7 +157,8 @@ function Homepage() {
           moods={moods.moodEntries.slice(-10)}
           moodIconColors={moodIconColors}
         />
-        <MoodSleepTrend />
+        <MoodSleepTrend moods={moods.moodEntries.slice(-11)}
+          moodIconColors={moodIconColors} />
       </div>
     </main>
   );
